@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Guard against any stray horizontal overflow on small screens.
+       `clip` is used instead of `hidden` so that `position: sticky`
+       (used by the navbar) keeps working. */
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: #2c4a34;
+    color: #f6f3ec;
+  }
+
+  body {
+    font-feature-settings: 'ss01' on, 'cv01' on;
+  }
+
+  /* Media never escapes its container. Tailwind utilities such as
+     `h-full` / `aspect-square` still win over these element rules. */
+  img,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  /* Long words / URLs shouldn't force a horizontal scrollbar. */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  a,
+  span {
+    overflow-wrap: break-word;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2c4a34;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* iOS zooms the viewport when a focused control has a font-size
+     below 16px. Keep controls at 16px on phones only. */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-12;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden bg-stone;
+    background-image: linear-gradient(
+      90deg,
+      #eae4d8 0px,
+      #f3efe4 40px,
+      #eae4d8 80px
+    );
+    background-size: 800px 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+}
+
+/* Respect notches / rounded corners in landscape (viewport-fit=cover). */
+.container-page {
+  padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: max(2rem, env(safe-area-inset-left, 0px));
+    padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-left: max(3rem, env(safe-area-inset-left, 0px));
+    padding-right: max(3rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Horizontal scroll strips (tabs, thumbnail rails) without a visible bar. */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hero height: use small-viewport units where supported so mobile browser
+   chrome doesn't push the hero taller than the visible area. */
+.hero-min-h {
+  min-height: 86vh;
+}
+
+@supports (min-height: 100svh) {
+  .hero-min-h {
+    min-height: 86svh;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-min-h {
+    min-height: 92vh;
+  }
+
+  @supports (min-height: 100svh) {
+    .hero-min-h {
+      min-height: 92svh;
+    }
+  }
+}
+
+/* Sheet/panel heights that follow the *visible* viewport on mobile browsers
+   (address bar showing or hidden), with a vh fallback for older engines. */
+.panel-h-85 {
+  max-height: 85vh;
+}
+
+@supports (max-height: 100dvh) {
+  .panel-h-85 {
+    max-height: 85dvh;
+  }
+}
+
+.search-panel-h {
+  max-height: 100vh;
+}
+
+@supports (max-height: 100dvh) {
+  .search-panel-h {
+    max-height: 100dvh;
+  }
+}
+
+@media (min-width: 640px) {
+  .search-panel-h {
+    max-height: 80vh;
+  }
+}
+
+/* Quick Add is hover-revealed on pointer devices. On touch screens there is
+   no hover, so reveal it permanently instead of leaving an invisible
+   tap target sitting on top of the product image. */
+@media (hover: none) {
+  .quick-add-touch {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Comfortable tap targets on touch devices. */
+@media (pointer: coarse) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Custom scrollbar for filter panels & drawers */
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #dcd5c4;
+  border-radius: 999px;
+}
+
+.category-marquee-track {
+  animation: category-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes category-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+.review-marquee-track {
+  animation: review-marquee 32s linear infinite;
+  will-change: transform;
+}
+
+@keyframes review-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+.new-arrivals-marquee-track {
+  animation: new-arrivals-marquee 36s linear infinite;
+  will-change: transform;
+}
+
+@keyframes new-arrivals-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+/* The category rail uses a smaller gap below `sm`, so the loop distance
+   has to match or the marquee visibly jumps each cycle. */
+@media (max-width: 639px) {
+  @keyframes category-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+}
