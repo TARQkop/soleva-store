@@ -90,8 +90,8 @@ export const products: Product[] = [
     images: [
       img('photo-1542291026-7eec264c27ff', 1200),
       img('photo-1595950653106-6c9ebd614d3a', 1200),
+      img('photo-1571019613454-1cb2f99b2d8b', 1200),
       img('photo-1460353581641-37baddab0fa2', 1200),
-      img('photo-1549298916-b41d501d3772', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Engineered mesh with fused overlays' },
@@ -124,8 +124,8 @@ export const products: Product[] = [
     images: [
       img('photo-1491553895911-0055eca6402d', 1200),
       img('photo-1465453869711-7e174808ace9', 1200),
-      img('photo-1525966222134-fcfa99b8ae77', 1200),
       img('photo-1608231387042-66d1773070a5', 1200),
+      img('photo-1525966222134-fcfa99b8ae77', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Synthetic leather with TPU cage' },
@@ -159,8 +159,8 @@ export const products: Product[] = [
     images: [
       img('photo-1560769629-975ec94e6a86', 1200),
       img('photo-1556906781-9a412961c28c', 1200),
-      img('photo-1543508282-6319a3e2621f', 1200),
       img('photo-1595341888016-a392ef81b7de', 1200),
+      img('photo-1543508282-6319a3e2621f', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Full-grain leather' },
@@ -192,8 +192,8 @@ export const products: Product[] = [
     images: [
       img('photo-1520256862855-398228c41684', 1200),
       img('photo-1606107557195-0e29a4b5b4aa', 1200),
-      img('photo-1587563871167-1ee9c731aefb', 1200),
       img('photo-1554062614-6da4fa67725f', 1200),
+      img('photo-1587563871167-1ee9c731aefb', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Waterproof nubuck leather' },
@@ -223,9 +223,9 @@ export const products: Product[] = [
       { name: 'Ink', hex: '#1C1B17', image: img('photo-1542291026-7eec264c27ff') },
     ],
     images: [
-      img('photo-1571019613454-1cb2f99b2d8b', 1200),
+      img('photo-1600185365483-26d7a4cc7519', 1200),
       img('photo-1542291026-7eec264c27ff', 1200),
-      img('photo-1595950653106-6c9ebd614d3a', 1200),
+      img('photo-1460353581641-37baddab0fa2', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Seamless engineered knit' },
@@ -290,8 +290,8 @@ export const products: Product[] = [
     ],
     images: [
       img('photo-1491553895911-0055eca6402d', 1200),
-      img('photo-1491553895911-0055eca6402d', 1200),
       img('photo-1465453869711-7e174808ace9', 1200),
+      img('photo-1608231387042-66d1773070a5', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Ripstop textile with TPU overlays' },
@@ -323,7 +323,7 @@ export const products: Product[] = [
     images: [
       img('photo-1543508282-6319a3e2621f', 1200),
       img('photo-1556906781-9a412961c28c', 1200),
-      img('photo-1560769629-975ec94e6a86', 1200),
+      img('photo-1595341888016-a392ef81b7de', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Canvas with suede overlays' },
@@ -421,9 +421,9 @@ export const products: Product[] = [
     ],
     images: [
       img('photo-1595950653106-6c9ebd614d3a', 1200),
-      img('photo-1595341888016-a392ef81b7de', 1200),
-      img('photo-1465453869711-7e174808ace9', 1200),
-      img('photo-1525966222134-fcfa99b8ae77', 1200),
+      img('photo-1543508282-6319a3e2621f', 1200),
+      img('photo-1556906781-9a412961c28c', 1200),
+      img('photo-1560769629-975ec94e6a86', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Mixed leather and mesh' },
@@ -456,7 +456,7 @@ export const products: Product[] = [
     images: [
       img('photo-1571019613454-1cb2f99b2d8b', 1200),
       img('photo-1542291026-7eec264c27ff', 1200),
-      img('photo-1595950653106-6c9ebd614d3a', 1200),
+      img('photo-1460353581641-37baddab0fa2', 1200),
     ],
     specs: [
       { label: 'Upper', value: 'Minimal engineered mesh' },
