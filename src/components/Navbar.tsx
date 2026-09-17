@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import solevaLogo from '../../assets/soleva_logo_transparent.png'
 import { useCart } from '../context/CartContext'
 import { useWishlist } from '../context/WishlistContext'
 import MobileNav from './MobileNav'
@@ -34,7 +35,8 @@ export default function Navbar() {
           </button>
         </div>
 
-        <Link to="/" className="shrink-0 font-display text-xl tracking-tight text-ink xs:text-2xl sm:text-[26px]">
+        <Link to="/" className="flex shrink-0 items-center gap-1 font-display text-xl tracking-tight text-ink xs:text-2xl sm:text-[26px]">
+          <img src={solevaLogo} alt="" className="h-12 w-12 object-contain opacity-70 [filter:brightness(0)] sm:h-7 sm:w-8" />
           SOLEVA
         </Link>
 

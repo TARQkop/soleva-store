@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
+import solevaLogo from '../../assets/soleva_logo_transparent.png'
 
 interface MobileNavProps {
   isOpen: boolean
@@ -23,7 +24,10 @@ export default function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
       <div className="absolute inset-0 bg-ink/50 animate-fade-in" onClick={onClose} aria-hidden="true" />
       <div className="relative z-10 flex h-full w-[82%] min-w-[16rem] max-w-xs flex-col overflow-y-auto thin-scroll bg-paper p-6 pt-[max(1.5rem,env(safe-area-inset-top))] shadow-lift animate-slide-in-left">
         <div className="flex shrink-0 items-center justify-between">
-          <span className="font-display text-xl">SOLEVA</span>
+          <span className="flex items-center gap-1 font-display text-xl">
+            <img src={solevaLogo} alt="" className="h-11 w-11 object-contain opacity-70 [filter:brightness(0)]" />
+            SOLEVA
+          </span>
           <button
             onClick={onClose}
             aria-label="Close menu"
